@@ -1,0 +1,20 @@
+@import url(./App.css);
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+/* 
+.agneya-website-body{
+ background: url(--bg-dark);
+;
+  overflow-x: hidden;
+}
+
+main {
+  min-height: 100vh;
+}
+html {
+  scroll-padding-top: 100px;
+} */

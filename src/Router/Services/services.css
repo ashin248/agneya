@@ -1,0 +1,153 @@
+@import url(../../App.css);
+
+.services-page-wrapper{
+  height:680vh;
+  background:var(--bg-dark);
+  position:relative;
+}
+
+.sticky-view{
+  position:sticky;
+  top:0;
+  height:100vh;
+  overflow:hidden;
+}
+
+/* HERO */
+
+.hero-center{
+  position:absolute;
+  inset:0;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  z-index:5;
+  padding:0 5vw;
+}
+
+.hero-center h1{
+  font-size:clamp(3rem,7vw,5.5rem);
+  line-height:1.05;
+  margin-bottom:1rem;
+  background:var(--gradient-text);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+.hero-center p{
+  font-size:clamp(1.1rem,2.5vw,1.35rem);
+  color:var(--text-secondary);
+}
+
+/* INK */
+
+.ink-layer{
+  position:absolute;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  pointer-events:none;
+}
+
+.ink-sprite{
+  position:absolute;
+  width:340px;
+  will-change:transform,opacity;
+}
+
+/* SERVICES */
+
+.services-container{
+  position:relative;
+  width:100%;
+  height:100%;
+  transform:translateZ(0);
+}
+
+.service-item{
+  will-change:transform,opacity;
+  backface-visibility:hidden;
+}
+
+/* CONTENT */
+
+.service-content{
+  width:100%;
+  max-width:1180px;
+  margin:0 auto;
+  padding:0 5vw;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:80px;
+  align-items:center;
+}
+
+.count{
+  font-size:1.6rem;
+  font-weight:800;
+  letter-spacing:3px;
+  color:var(--primary);
+  margin-bottom:10px;
+}
+
+.title{
+  font-size:clamp(2.4rem,5vw,4rem);
+  margin-bottom:1rem;
+  color:var(--text-primary);
+}
+
+.description{
+  font-size:1.15rem;
+  line-height:1.7;
+  color:var(--text-secondary);
+}
+
+.accent-line{
+  width:90px;
+  height:5px;
+  margin-top:1.6rem;
+  background:var(--gradient-brand);
+}
+
+.image-column{
+  display:flex;
+  justify-content:flex-end;
+}
+
+.image-wrapper{
+  width:100%;
+  max-width:560px;
+  aspect-ratio:4/3;
+  overflow:hidden;
+  border-radius:12px;
+}
+
+.image-wrapper img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:transform .7s cubic-bezier(.23,1,.32,1);
+}
+
+.service-content:hover img{
+  transform:scale(1.06);
+}
+
+/* MOBILE */
+
+@media(max-width:840px){
+
+.service-content{
+grid-template-columns:1fr;
+gap:50px;
+text-align:center;
+}
+
+.image-column{
+justify-content:center;
+}
+
+}

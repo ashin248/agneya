@@ -1,0 +1,209 @@
+@import url("../../App.css");
+
+/* ABOUT SECTION */
+
+.about-section{
+width:100%;
+min-height:100vh;
+background:#0f0f10;
+color:white;
+padding:120px 8%;
+overflow:visible;
+}
+
+.about-container{
+max-width:1300px;
+margin:auto;
+}
+
+
+/* HEADER */
+
+.about-header{
+text-align:center;
+margin-bottom:120px;
+}
+
+.classic-title{
+font-size:48px;
+font-weight:600;
+margin-bottom:20px;
+}
+
+.about-subtitle{
+font-size:18px;
+opacity:0.7;
+}
+
+
+/* STORY GRID */
+
+.story-grid{
+display:flex;
+align-items:center;
+gap:80px;
+margin-bottom:150px;
+}
+
+.story-content{
+flex:1;
+}
+
+.story-content h3{
+font-size:32px;
+margin-bottom:20px;
+}
+
+.story-content p{
+font-size:18px;
+line-height:1.7;
+opacity:0.85;
+}
+
+
+/* VISUAL SHAPES */
+
+.story-visual{
+flex:1;
+height:350px;
+position:relative;
+}
+
+.abstract-shape{
+position:absolute;
+border-radius:50%;
+filter:blur(40px);
+opacity:0.6;
+}
+
+.shape-1{
+width:220px;
+height:220px;
+background:#ff4d4d;
+top:40px;
+left:60px;
+}
+
+.shape-2{
+width:180px;
+height:180px;
+background:#00c6ff;
+bottom:20px;
+right:40px;
+}
+
+
+/* SERVE SECTION */
+
+.serve-wrapper{
+text-align:center;
+}
+
+.serve-wrapper .classic-title{
+margin-bottom:60px;
+font-size:40px;
+}
+
+
+/* CARD */
+
+.printer-container{
+
+width:100%;
+max-width:500px;
+
+margin:auto;
+
+background:#1a1a1a;
+
+padding:40px;
+
+border-radius:14px;
+
+box-shadow:0 20px 50px rgba(0,0,0,0.6);
+
+}
+
+
+/* LIST */
+
+.print-items{
+list-style:none;
+padding:0;
+margin:0;
+}
+
+.print-items li{
+
+display:flex;
+align-items:center;
+
+font-size:18px;
+
+padding:14px 0;
+
+border-bottom:1px solid rgba(255,255,255,0.1);
+
+}
+
+.print-items li:last-child{
+border-bottom:none;
+}
+
+
+/* DOT */
+
+.dot{
+
+width:10px;
+height:10px;
+
+background:#d4af37;
+
+border-radius:50%;
+
+margin-right:14px;
+
+}
+
+
+/* GSAP TEXT */
+
+.scatter-line span{
+display:inline-block;
+}
+
+.handwrite-text span{
+display:inline-block;
+}
+
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+
+.story-grid{
+flex-direction:column;
+}
+
+.printer-container{
+width:100%;
+}
+
+}
+
+@media(max-width:600px){
+
+.classic-title{
+font-size:32px;
+}
+
+.story-content p{
+font-size:16px;
+}
+
+.print-items li{
+font-size:16px;
+}
+
+}

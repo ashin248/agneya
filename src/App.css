@@ -1,0 +1,122 @@
+:root {
+  /* ──────────────── Core Colors ──────────────── */
+  --bg-dark: #0a0612;
+  --bg-darker: #05030a;
+  --bg-medium: #13101c;
+  --bg-light: #1e1830;
+
+  --text-primary: #f8f4ff;
+  --text-secondary: #c9b8e6;
+  --text-muted: #8a7aa6;
+
+  /* Main brand gradient colors */
+  --primary: #e07aff;           /* vibrant purple-magenta */
+  --primary-dark: #b350e0;
+  --primary-light: #f5a3ff;
+
+  --accent: #ff6b35;            /* fiery orange */
+  --accent-dark: #d94f1a;
+  --accent-light: #ff8c5e;
+
+  --gold: #f4c430;              /* subtle gold for highlights */
+  --gold-dark: #c9a11f;
+
+  /* Gradients */
+  --gradient-brand: linear-gradient(135deg, #ff6b35 0%, #e07aff 50%, #b350e0 100%);
+  --gradient-text: linear-gradient(to right, #ff8c5e, #f5a3ff, #c9a11f);
+  --gradient-glow: linear-gradient(45deg, rgba(224,122,255,0.25), rgba(255,107,53,0.25));
+
+  /* Glow & Shadow */
+  --glow-primary: 0 0 25px rgba(224, 122, 255, 0.55);
+  --glow-accent: 0 0 30px rgba(255, 107, 53, 0.6);
+  --glow-gold: 0 0 20px rgba(244, 196, 48, 0.45);
+
+  --shadow-glow: 0 16px 60px rgba(176, 140, 217, 0.38);
+  --shadow-heavy: 0 25px 80px rgba(0, 0, 0, 0.65);
+
+  /* Others */
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-pill: 999px;
+
+  --transition: all 0.55s cubic-bezier(0.23, 1, 0.32, 1);
+  --transition-fast: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-smooth: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+
+  /* Container & Spacing */
+  --container-max: 1480px;
+  --section-padding: clamp(70px, 10vw, 140px);
+  --section-gap: clamp(60px, 8vw, 120px);
+}
+
+
+
+/* ──────────────── Responsive Breakpoints ────────────────
+
+@media (max-width: 350px) {
+  :root {
+    --section-padding: 40px 5vw;
+    --section-gap: 50px;
+    font-size: 13.5px;         
+  }
+  
+  .logo-text { font-size: 1.4rem; letter-spacing: 2px; }
+  .nav-item  { font-size: 0.8rem; gap: 18px; }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --section-padding: 50px 6vw;
+    --container-max: 100%;
+  }
+  
+  h1, .classic-title { font-size: clamp(2.1rem, 7.5vw, 3.2rem); }
+  .hero-desc { font-size: 1rem; }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --section-padding: clamp(60px, 9vw, 90px);
+  }
+  
+  .desktop-links { display: none; }
+  .menu-trigger { display: block; }
+  .cta-pill { display: none; }
+  
+  .services-scroll-view, .service-row-item {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media (max-width: 1280px) {
+  :root {
+    --container-max: 1180px;
+  }
+  
+  .hero-highlights {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px;
+  }
+}
+
+@media (min-width: 1281px) {
+  :root {
+    --container-max: 1480px;
+  }
+}
+
+@media (min-width: 2560px) 
+  :root {
+    --container-max: 1920px;
+    font-size: 18px;           
+    --section-padding: 160px 10vw;
+    --glow-primary: 0 0 45px rgba(224,122,255,0.7);
+    --glow-accent:  0 0 50px rgba(255,107,53,0.75);
+  }
+  
+  h1 { font-size: 6.5rem; }
+  .classic-title { font-size: 5.2rem; }
+} */
+

@@ -257,7 +257,7 @@ box-shadow:0 10px 30px rgba(0,255,200,0.3);
 
 /* Extra Small Mobiles (320px - 375px) */
 @media only screen and (min-width: 320px) and (max-width: 375px) {
-  .hero-content h1 { font-size: 2.2rem; }
+  .hero-content h1 { font-size: 1.5rem; }
   .hero-desc { font-size: 0.95rem; padding: 0 5%; }
   .hero-highlights { gap: 8px; justify-content: center; }
   .highlight-pill { padding: 8px 12px; }
@@ -275,7 +275,7 @@ box-shadow:0 10px 30px rgba(0,255,200,0.3);
 
 /* Small Tablets / Large Phones (481px - 768px) */
 @media only screen and (min-width: 481px) and (max-width: 768px) {
-  .hero-content h1 { font-size: 3.5rem; }
+  .hero-content h1 { font-size: 1.5rem; }
   .hero-desc { font-size: 1.1rem; max-width: 85%; margin-inline: auto; }
   .hero-highlights { gap: 12px; margin-bottom: 35px; }
   .hero-social { gap: 25px; }
@@ -283,7 +283,7 @@ box-shadow:0 10px 30px rgba(0,255,200,0.3);
 
 /* Large Tablets / IPads (769px - 1024px) */
 @media only screen and (min-width: 769px) and (max-width: 1024px) {
-  .hero-content h1 { font-size: 4.5rem; }
+  .hero-content h1 { font-size: 2.5rem; }
   .hero-desc { max-width: 650px; font-size: 1.2rem; margin-inline: auto; }
   .hero-highlights { margin-bottom: 45px; gap: 15px; }
 }
@@ -291,7 +291,7 @@ box-shadow:0 10px 30px rgba(0,255,200,0.3);
 /* Laptops & Small Desktops (1025px - 1280px) */
 @media only screen and (min-width: 1025px) and (max-width: 1280px) {
   .hero-content { max-width: 900px; }
-  .hero-content h1 { font-size: 5rem; }
+  .hero-content h1 { font-size: 3rem; }
 }
 
 /* Large Desktops (1281px - 1920px) */
@@ -302,7 +302,7 @@ box-shadow:0 10px 30px rgba(0,255,200,0.3);
 
 /* TV & Extra Large Screens (1921px and above) */
 @media only screen and (min-width: 1921px) {
-  .hero-content h1 { font-size: 7.5rem; }
+  .hero-content h1 { font-size: 4.5rem; }
   .hero-desc { font-size: 1.7rem; max-width: 1000px; margin-bottom: 60px; }
   .hero-badge { font-size: 1.2rem; padding: 12px 25px; }
   .highlight-pill { padding: 18px 35px; }

@@ -47,15 +47,15 @@ export default function Contact() {
 
         <motion.div
           className="contact-info"
-          initial={{ opacity: 0, x: -80 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.9 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.8 }}
         >
 
           <h2>Contact Us</h2>
 
           <p>
-            Have a project or printing requirement?  
+            Have a project or printing requirement?
             Let's bring your ideas to life.
           </p>
 
@@ -66,7 +66,7 @@ export default function Contact() {
             onClick={() => setShowCallOptions(!showCallOptions)}
           >
 
-            <img src="/assets/Contact/Call_icon.png" alt="call" />
+            <i className="bi bi-telephone"></i>
 
             <div>
               <h4>Phone</h4>
@@ -81,8 +81,8 @@ export default function Contact() {
 
               <motion.div
                 className="call-options"
-                initial={{ opacity: 0, y: -10 }}
-                animate={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
               >
 
@@ -109,7 +109,7 @@ export default function Contact() {
             className="contact-item clickable"
           >
 
-            <img src="/assets/Contact/email_icon.png" alt="email" />
+            <i className="bi bi-envelope"></i>
 
             <div>
               <h4>Email</h4>
@@ -127,7 +127,7 @@ export default function Contact() {
             className="contact-item clickable"
           >
 
-            <img src="/assets/Contact/location_icon.png" alt="location" />
+            <i className="bi bi-geo-alt"></i>
 
             <div>
               <h4>Location</h4>
@@ -136,15 +136,33 @@ export default function Contact() {
 
           </a>
 
+          {/* SOCIAL MEDIA */}
+
+          <div className="social-icons">
+
+            <a href="#" aria-label="Instagram">
+              <i className="bi bi-instagram"></i>
+            </a>
+
+            <a href="#" aria-label="Facebook">
+              <i className="bi bi-facebook"></i>
+            </a>
+
+            <a href="#" aria-label="Twitter">
+              <i className="bi bi-twitter-x"></i>
+            </a>
+
+          </div>
+
         </motion.div>
 
         {/* FORM */}
 
         <motion.div
           className="contact-form-wrapper"
-          initial={{ opacity: 0, x: 80 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.9 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.8 }}
         >
 
           <form onSubmit={handleSubmit} className="contact-form">
@@ -186,8 +204,8 @@ export default function Contact() {
 
               <motion.div
                 className="success-box"
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
               >
                 Message Sent Successfully!

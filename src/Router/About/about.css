@@ -164,6 +164,7 @@ display:inline-block;
 
 .handwrite-text span{
 display:inline-block;
+letter-spacing: 2px;
 }
 
 

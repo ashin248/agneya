@@ -21,7 +21,9 @@ export default function HomeSection() {
     mass: 0.5
   });
 
-  const y1 = useTransform(smoothScroll, [0, 600], [0, 220]);
+  /* SOFT PARALLAX FIX */
+
+  const y1 = useTransform(smoothScroll, [0, 700], [0, 90]);
 
   return (
     <section className="hero-section" id="home">
@@ -52,7 +54,7 @@ export default function HomeSection() {
         <div className="hero-overlay-gradient" />
       </div>
 
-      {/* CONTENT */}
+      {/* HERO CONTENT */}
 
       <motion.div className="hero-content" style={{ y: y1 }}>
 
@@ -62,7 +64,7 @@ export default function HomeSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          Premium Printing Solutions 
+          Premium Printing Solutions
         </motion.span>
 
         <motion.h1
@@ -113,30 +115,17 @@ export default function HomeSection() {
           ))}
         </div>
 
-        {/* BUTTONS */}
+        {/* SOCIAL ICONS */}
 
         <motion.div
-          className="hero-actions"
-          initial={{ opacity: 0, y: 40 }}
+          className="hero-social"
+          initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1 }}
         >
-          <motion.a
-            href="#contact"
-            className="glow-btn main-btn"
-            whileHover={{ scale: 1.07 }}
-            whileTap={{ scale: 0.96 }}
-          >
-            Start Your Project
-          </motion.a>
-
-          <motion.a
-            href="#services"
-            className="outline-btn"
-            whileHover={{ scale: 1.05 }}
-          >
-            Explore Services
-          </motion.a>
+          <a href="#"><i className="bi bi-instagram"></i></a>
+          <a href="#"><i className="bi bi-facebook"></i></a>
+          <a href="#"><i className="bi bi-twitter-x"></i></a>
         </motion.div>
 
       </motion.div>
@@ -149,7 +138,7 @@ export default function HomeSection() {
         transition={{ duration: 1.8, repeat: Infinity }}
       >
         <div className="mouse">
-          <div className="wheel" />
+          <div className="wheel"></div>
         </div>
       </motion.div>
 

@@ -118,33 +118,29 @@
 
 /* Smart Watches (200px - 300px) */
 @media only screen and (max-width: 300px) {
-  .hero-center { padding: 40px 5vw; }
+  .hero-center { padding: 40px 10px; }
+  .hero-center h1 { font-size: 1.8rem; }
   .service-item { padding: 40px 0; }
-  .service-content { gap: 1.5rem; }
+  .service-content { grid-template-columns: 1fr; gap: 1.5rem; }
   .title { font-size: 1.5rem; }
-  .description { font-size: 0.9rem; }
+  .description { font-size: 0.85rem; }
   .image-wrapper { height: 180px; }
   .count { font-size: 0.8rem; letter-spacing: 2px; }
 }
 
 /* Extra Small Mobiles (320px - 375px) */
 @media only screen and (min-width: 320px) and (max-width: 375px) {
-  .service-content { 
-    grid-template-columns: 1fr; 
-    gap: 2rem; 
-  }
-  .service-item { padding: 60px 0; }
-  .image-column { order: -1; } /* ഇമേജ് മുകളിൽ വരാൻ */
+  .hero-center { padding: 60px 20px; }
+  .service-content { grid-template-columns: 1fr; gap: 2rem; }
+  .image-column { order: -1; } /* മൊബൈലിൽ ഇമേജ് ടെക്സ്റ്റിന് മുകളിൽ വരാൻ */
   .image-wrapper { height: 220px; }
   .text-column { text-align: center; align-items: center; }
+  .service-item { padding: 60px 0; }
 }
 
 /* Large Mobiles (376px - 480px) */
 @media only screen and (min-width: 376px) and (max-width: 480px) {
-  .service-content { 
-    grid-template-columns: 1fr; 
-    gap: 2.5rem; 
-  }
+  .service-content { grid-template-columns: 1fr; gap: 2.5rem; }
   .image-column { order: -1; }
   .image-wrapper { height: 260px; }
   .text-column { text-align: center; align-items: center; }
@@ -153,18 +149,15 @@
 
 /* Small Tablets / Large Phones (481px - 768px) */
 @media only screen and (min-width: 481px) and (max-width: 768px) {
-  .service-content { 
-    grid-template-columns: 1fr; 
-    gap: 3rem; 
-  }
-  .image-column { order: -1; width: 80%; margin: 0 auto; }
+  .service-content { grid-template-columns: 1fr; gap: 3rem; }
+  .image-column { order: -1; width: 90%; margin: 0 auto; }
   .text-column { text-align: center; align-items: center; }
   .service-item { padding: 100px 0; }
 }
 
 /* Large Tablets / IPads (769px - 1024px) */
 @media only screen and (min-width: 769px) and (max-width: 1024px) {
-  .service-content { gap: 3rem; }
+  .service-content { gap: 3rem; grid-template-columns: 1fr 1.2fr; }
   .service-item { padding: 100px 0; }
   .title { font-size: 2.5rem; }
 }
@@ -177,13 +170,13 @@
 
 /* Large Desktops (1281px - 1920px) */
 @media only screen and (min-width: 1281px) and (max-width: 1920px) {
-  /* Default styles apply here */
+  .service-content { max-width: 1300px; gap: 6rem; }
 }
 
 /* TV & Extra Large Screens (1921px and above) */
 @media only screen and (min-width: 1921px) {
-  .service-content { max-width: 1600px; gap: 8rem; }
-  .hero-center { max-width: 1200px; padding: 120px 0; }
+  .service-content { max-width: 1600px; gap: 10rem; }
+  .hero-center { max-width: 1200px; padding: 150px 0; }
   .service-item { padding: 160px 0; }
   .count { font-size: 1.5rem; }
   .description { font-size: 1.8rem; }

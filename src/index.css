@@ -11,11 +11,14 @@
   flex-direction: column;
 }
 
+*{
+font-family: "PT Serif", serif;
+}
 
-main {
+/* main {
   flex: 1;
   width: 100%;
-}
+} */
 
 
 

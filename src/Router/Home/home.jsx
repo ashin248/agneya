@@ -62,7 +62,7 @@ export default function HomeSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          Premium Print Solutions
+          Premium Printing Solutions 
         </motion.span>
 
         <motion.h1

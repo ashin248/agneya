@@ -199,8 +199,61 @@
   background-clip: text;
 }
 
-/* ───── Responsive ───── */
-@media (max-width: 992px) {
-  .desktop-links, .cta-pill { display: none; }
+
+/* ──────────────── Responsive Breakpoints ──────────────── */
+
+/* Smart Watches (200px - 300px) */
+@media only screen and (max-width: 300px) {
+  .navbar-fixed { height: 60px; }
+  .logo-text { font-size: 1rem; letter-spacing: 2px; }
   .menu-trigger { display: flex; }
+  .desktop-links, .cta-pill { display: none; }
+}
+
+/* Extra Small Mobiles (320px - 375px) */
+@media only screen and (min-width: 320px) and (max-width: 375px) {
+  .navbar-fixed { height: 70px; }
+  .logo-text { font-size: 1.2rem; }
+  .menu-trigger { display: flex; }
+  .desktop-links, .cta-pill { display: none; }
+}
+
+/* Large Mobiles (376px - 480px) */
+@media only screen and (min-width: 376px) and (max-width: 480px) {
+  .navbar-fixed { height: 75px; }
+  .logo-text { font-size: 1.4rem; }
+  .menu-trigger { display: flex; }
+  .desktop-links, .cta-pill { display: none; }
+}
+
+/* Small Tablets / Large Phones (481px - 768px) */
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+  .navbar-fixed { height: 80px; }
+  .menu-trigger { display: flex; }
+  .desktop-links, .cta-pill { display: none; }
+  .mobile-nav-list a { font-size: 2rem; }
+}
+
+/* Large Tablets / IPads (769px - 1024px) */
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+  .desktop-links ul { gap: 20px; }
+  .nav-item { font-size: 0.7rem; letter-spacing: 1px; }
+  .cta-pill { padding: 10px 18px; font-size: 0.8rem; }
+}
+
+/* Laptops & Small Desktops (1025px - 1280px) */
+@media only screen and (min-width: 1025px) and (max-width: 1280px) {
+  .desktop-links ul { gap: 30px; }
+  .navbar-inner { padding: 0 4%; }
+}
+
+/* Large Desktops (1281px - 1920px) */
+@media only screen and (min-width: 1281px) and (max-width: 1920px) {
+  .navbar-inner { padding: 0 5%; }
+}
+
+/* TV & Extra Large Screens (1921px and above) */
+@media only screen and (min-width: 1921px) {
+  .navbar-inner { max-width: 1800px; }
+  .logo-text { font-size: 2.2rem; }
 }

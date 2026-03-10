@@ -1,11 +1,11 @@
 import React, { useRef } from "react";
-import { motion, useScroll, useTransform, useSpring } from "framer-motion";
+import { motion } from "framer-motion";
 import "./services.css";
 
 const services = [
   {
     title: "Digital Printing",
-    description: "Fast turnaround for short to medium runs with vibrant colors.",
+    description: "Fast turnaround for short to medium runs.",
     image: "/assets/aboutpage/Brochure & Catalog Printing.png",
   },
   {
@@ -40,137 +40,94 @@ const services = [
   },
 ];
 
-const inkImages = [
-  "/assets/ink/ink-01.png",
-  "/assets/ink/ink-02.png",
-  "/assets/ink/ink-03.png",
-  "/assets/ink/ink-04.png",
-  "/assets/ink/ink-05.png",
-  "/assets/ink/ink-06.png",
-  "/assets/ink/ink-07.png",
-];
-
 export default function Services() {
-  const containerRef = useRef(null);
 
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start start", "end end"],
-  });
-
-  const progress = useSpring(scrollYProgress, {
-    stiffness: 18,
-    damping: 40,
-    mass: 0.6,
-  });
-
-  const heroOpacity = useTransform(progress, [0, 0.12], [1, 0]);
-  const heroScale = useTransform(progress, [0, 0.12], [1, 0.92]);
+  const animationVariant = {
+    hidden: {
+      opacity: 0,
+      x: 160,
+      y: 120,
+      filter: "blur(10px)"
+    },
+    visible: {
+      opacity: 1,
+      x: 0,
+      y: 0,
+      filter: "blur(0px)",
+      transition: {
+        duration: 1.1,
+        ease: [0.25, 1, 0.5, 1]
+      }
+    },
+    exit: {
+      opacity: 0,
+      x: 140,
+      y: -140,
+      filter: "blur(12px)",
+      transition: {
+        duration: 1
+      }
+    }
+  };
 
   return (
-    <div className="services-page-wrapper" ref={containerRef}>
-      <div className="sticky-view">
-        {/* HERO */}
-        <motion.div
-          className="hero-center"
-          style={{ opacity: heroOpacity, scale: heroScale }}
-        >
-          <h1>Printing Solutions Crafted for Excellence</h1>
-          <p>Precision, vibrancy, and reliability in every print.</p>
-        </motion.div>
+    <div className="services-page-wrapper">
 
-        {/* INK EXPLOSION */}
-        <div className="ink-layer">
-          {inkImages.map((img, i) => {
-            const angle = (i / inkImages.length) * Math.PI * 2;
-            const radiusX = 520;
-            const radiusY = 380;
+      {/* HERO */}
 
-            const x = useTransform(progress, [0.10, 0.30], [0, Math.cos(angle) * radiusX]);
-            const y = useTransform(progress, [0.10, 0.30], [0, Math.sin(angle) * radiusY]);
-
-            const scale = useTransform(progress, [0.10, 0.20, 0.32], [0, 2.4, 0]);
-            const opacity = useTransform(progress, [0.10, 0.20, 0.32], [0, 0.9, 0]);
-
-            return (
-              <motion.img
-                key={i}
-                src={img}
-                className="ink-sprite"
-                style={{ x, y, scale, opacity }}
-              />
-            );
-          })}
-        </div>
-
-        {/* SERVICES */}
-        <div className="services-container">
-          {services.map((service, index) => (
-            <ServiceItem
-              key={index}
-              service={service}
-              index={index}
-              total={services.length}
-              progress={progress}
-            />
-          ))}
-        </div>
+      <div className="hero-center">
+        <h1>Printing Solutions Crafted for Excellence</h1>
+        <p>Precision, vibrancy, and reliability in every print.</p>
       </div>
+
+      {/* SERVICES */}
+
+      <div className="services-container">
+
+        {services.map((service, index) => (
+
+          <motion.div
+            key={index}
+            className="service-item"
+            variants={animationVariant}
+            initial="hidden"
+            whileInView="visible"
+            exit="exit"
+            viewport={{ amount: 0.4 }}
+          >
+
+            <div className="service-content">
+
+              {/* TEXT */}
+
+              <div className="text-column">
+                <span className="count">0{index + 1}</span>
+                <h2 className="title">{service.title}</h2>
+                <p className="description">{service.description}</p>
+                <div className="accent-line"></div>
+              </div>
+
+              {/* IMAGE */}
+
+              <motion.div
+                className="image-column"
+                initial={{ scale: 0.9, opacity: 0 }}
+                whileInView={{ scale: 1, opacity: 1 }}
+                transition={{ duration: 1 }}
+              >
+                <div className="image-wrapper">
+                  <img src={service.image} alt={service.title} />
+                </div>
+              </motion.div>
+
+            </div>
+
+          </motion.div>
+
+        ))}
+
+      </div>
+
     </div>
-  );
-}
-
-function ServiceItem({ service, index, total, progress }) {
-
-  const animationStart = 0.35;
-  const remainingSpace = 1 - animationStart;
-  const segment = remainingSpace / total;
-
-  const start = animationStart + index * segment;
-  const mid = start + segment * 0.5;
-  const end = start + segment;
-
-  const y = useTransform(progress, [start, mid, end], [120, 0, -120]);
-
-  const opacity = useTransform(
-    progress,
-    [start, mid - segment * 0.2, mid + segment * 0.2, end],
-    [0, 1, 1, 0]
-  );
-
-  const scale = useTransform(progress, [start, mid, end], [0.92, 1, 0.92]);
-
-  return (
-    <motion.div
-      className="service-item"
-      style={{
-        y,
-        opacity,
-        scale,
-        position: "absolute",
-        inset: 0,
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        transform: "translateZ(0)",
-      }}
-    >
-      <div className="service-content">
-
-        <div className="text-column">
-          <span className="count">0{index + 1}</span>
-          <h2 className="title">{service.title}</h2>
-          <p className="description">{service.description}</p>
-          <div className="accent-line" />
-        </div>
-
-        <div className="image-column">
-          <div className="image-wrapper">
-            <img src={service.image} alt={service.title} />
-          </div>
-        </div>
-
-      </div>
-    </motion.div>
   );
 }

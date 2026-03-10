@@ -53,70 +53,39 @@
 
 /* ──────────────── Responsive Breakpoints ────────────────
 
-@media (max-width: 350px) {
-  :root {
-    --section-padding: 40px 5vw;
-    --section-gap: 50px;
-    font-size: 13.5px;         
-  }
-  
-  .logo-text { font-size: 1.4rem; letter-spacing: 2px; }
-  .nav-item  { font-size: 0.8rem; gap: 18px; }
+/* Smart Watches (200px - 300px) */
+@media only screen and (max-width: 300px) {
+
 }
 
-@media (max-width: 480px) {
-  :root {
-    --section-padding: 50px 6vw;
-    --container-max: 100%;
-  }
-  
-  h1, .classic-title { font-size: clamp(2.1rem, 7.5vw, 3.2rem); }
-  .hero-desc { font-size: 1rem; }
+/* Extra Small Mobiles (320px - 375px) */
+@media only screen and (min-width: 320px) and (max-width: 375px) {
 }
 
-@media (max-width: 768px) {
-  :root {
-    --section-padding: clamp(60px, 9vw, 90px);
-  }
-  
-  .desktop-links { display: none; }
-  .menu-trigger { display: block; }
-  .cta-pill { display: none; }
-  
-  .services-scroll-view, .service-row-item {
-    flex-direction: column;
-    text-align: center;
-  }
+/* Large Mobiles (376px - 480px) */
+@media only screen and (min-width: 376px) and (max-width: 480px) {
 }
 
-@media (max-width: 1280px) {
-  :root {
-    --container-max: 1180px;
-  }
-  
-  .hero-highlights {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 14px;
-  }
+/* Small Tablets / Large Phones (481px - 768px) */
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+
 }
 
-@media (min-width: 1281px) {
-  :root {
-    --container-max: 1480px;
-  }
+/* Large Tablets / IPads (769px - 1024px) */
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+
 }
 
-@media (min-width: 2560px) 
-  :root {
-    --container-max: 1920px;
-    font-size: 18px;           
-    --section-padding: 160px 10vw;
-    --glow-primary: 0 0 45px rgba(224,122,255,0.7);
-    --glow-accent:  0 0 50px rgba(255,107,53,0.75);
-  }
+/* Laptops & Small Desktops (1025px - 1280px) */
+@media only screen and (min-width: 1025px) and (max-width: 1280px) {
   
-  h1 { font-size: 6.5rem; }
-  .classic-title { font-size: 5.2rem; }
-} */
+}
 
+/* Large Desktops (1281px - 1920px) */
+@media only screen and (min-width: 1281px) and (max-width: 1920px) {
+  
+}
+/* TV & Extra Large Screens (1921px and above) */
+@media only screen and (min-width: 1921px) {
+
+}

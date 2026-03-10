@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-
 import "./contact.css";
 
 export default function Contact() {
@@ -28,6 +27,7 @@ export default function Contact() {
   const handleSubmit = (e) => {
     e.preventDefault();
     setSubmitted(true);
+
     setTimeout(() => {
       setSubmitted(false);
       setFormData({
@@ -40,41 +40,54 @@ export default function Contact() {
 
   return (
     <section className="contact-section">
+
       <div className="contact-container">
 
-        {/* LEFT INFO */}
+        {/* CONTACT INFO */}
+
         <motion.div
           className="contact-info"
-          initial={{ opacity: 0, y: 80 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          initial={{ opacity: 0, x: -80 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.9 }}
         >
+
           <h2>Contact Us</h2>
+
           <p>
-            Have a project or printing requirement? Let's bring your ideas to life.
+            Have a project or printing requirement?  
+            Let's bring your ideas to life.
           </p>
 
-      
+          {/* PHONE */}
+
           <div
             className="contact-item clickable"
             onClick={() => setShowCallOptions(!showCallOptions)}
           >
+
             <img src="/assets/Contact/Call_icon.png" alt="call" />
+
             <div>
               <h4>Phone</h4>
               <p>{phoneNumber}</p>
             </div>
+
           </div>
 
           <AnimatePresence>
+
             {showCallOptions && (
+
               <motion.div
                 className="call-options"
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0 }}
               >
+
                 <a href={`tel:${phoneNumber}`}>📞 Call</a>
+
                 <a
                   href={`https://wa.me/${phoneNumber.replace("+", "")}`}
                   target="_blank"
@@ -82,18 +95,30 @@ export default function Contact() {
                 >
                   💬 WhatsApp
                 </a>
+
               </motion.div>
+
             )}
+
           </AnimatePresence>
 
-          <a href={`mailto:${emailAddress}`} className="contact-item clickable">
+          {/* EMAIL */}
+
+          <a
+            href={`mailto:${emailAddress}`}
+            className="contact-item clickable"
+          >
+
             <img src="/assets/Contact/email_icon.png" alt="email" />
+
             <div>
               <h4>Email</h4>
               <p>{emailAddress}</p>
             </div>
+
           </a>
 
+          {/* LOCATION */}
 
           <a
             href={mapLink}
@@ -101,22 +126,29 @@ export default function Contact() {
             rel="noreferrer"
             className="contact-item clickable"
           >
+
             <img src="/assets/Contact/location_icon.png" alt="location" />
+
             <div>
               <h4>Location</h4>
               <p>Kochi, Kerala, India</p>
             </div>
+
           </a>
+
         </motion.div>
 
         {/* FORM */}
+
         <motion.div
           className="contact-form-wrapper"
-          initial={{ opacity: 0, y: 80 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          initial={{ opacity: 0, x: 80 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.9 }}
         >
+
           <form onSubmit={handleSubmit} className="contact-form">
+
             <input
               type="text"
               name="name"
@@ -125,6 +157,7 @@ export default function Contact() {
               onChange={handleChange}
               required
             />
+
             <input
               type="email"
               name="email"
@@ -133,6 +166,7 @@ export default function Contact() {
               onChange={handleChange}
               required
             />
+
             <textarea
               name="message"
               placeholder="Your Message"
@@ -141,23 +175,32 @@ export default function Contact() {
               onChange={handleChange}
               required
             />
+
             <button type="submit">Send Message</button>
+
           </form>
 
           <AnimatePresence>
+
             {submitted && (
+
               <motion.div
                 className="success-box"
-                initial={{ opacity: 0, y: 40 }}
-                animate={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0 }}
               >
                 Message Sent Successfully!
               </motion.div>
+
             )}
+
           </AnimatePresence>
+
         </motion.div>
+
       </div>
+
     </section>
   );
 }
